@@ -362,7 +362,7 @@ codeblock:
   copy_button:
     enable: true
     # Show text copy result.
-    show_result: false
+    show_result: true
     # Available values: default | flat | mac
     style:
 
@@ -998,6 +998,12 @@ vendors:
 css: css
 js: js
 images: images
+
+# 近期文章设置
+recent_posts_title: 近期文章
+recent_posts_layout: block
+recent_posts: true
+
 
 
 
