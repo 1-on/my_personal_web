@@ -614,13 +614,13 @@ changyan:
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
   enable: true
-  appid: tK0zePcz4fuP2rQZDZSxWp4H-MdYXbMMI
-  appkey: 6QVBsiayNd6af1Y4QQSWx0D5
+  appid: 8tOBxMClZyANnBwVg6z6x5f1-gzGzoHsz
+  appkey: ricsDPy5m43VVvK3LMXGPBD6
   notify: false # Mail notifier
   verify: false # Verification code
   placeholder: 作者看到就会及时反馈，欢迎评论哦(๑•̀ㅂ•́)و✧ # Comment box placeholder
   avatar: mm # Gravatar style
-  guest_info: nick,mail,link # Custom comment header
+  guest_info: nick,mail # Custom comment header
   pageSize: 10 # Pagination size
   language: zh-cn # Language, available values: en, 
   visitor: true # Article reading statistic
