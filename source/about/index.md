@@ -11,6 +11,6 @@ type: "about"
 
 我会在该网页上放一些个人链接，分享一些个人经历。
 
-本网站使用Hexo+next+vercel完成搭建，我会在我的GitHub上开源该网站，因为使用的是国外的服务器，访问速度可能不是很快。
+本网站使用Hexo+next+vercel完成搭建，我会在我的GitHub上开源该网站。
 
 如果有任何的问题，欢迎发送邮件到yixian272197@gmail.com与我联系
