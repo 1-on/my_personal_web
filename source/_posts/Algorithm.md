@@ -295,3 +295,100 @@ node *build(int h1, int t1, int h2, int t2) {
 //4 1 6 3 5 7 2 层序
 ```
 
+### LCA（倍增算法）
+
+```C++
+const int N = 5e5 + 10;
+int n, m, s, a, b;
+vector<int> e[N];
+int dep[N]; //dep[u]存u点的深度 
+int fa[N][20]; ///fa[u][i]存从u点向上跳2^i层的祖先结点
+
+void dfs(int u, int father) {
+    dep[u] = dep[father] + 1;
+    //向上跳1，2,4……步的公共祖先
+    fa[u][0] = father;
+    for (int i = 1; i <= 19; ++i) {
+        fa[u][i] = fa[fa[u][i - 1]][i - 1];
+    }
+    for (int v: e[u]) {
+        if (v != father) dfs(v, u);
+    }
+}
+
+int lca(int u, int v) {
+    if (dep[u] < dep[v]) swap(u, v);
+    //先跳到同一层
+    for (int i = 19; i >= 0; i--) {
+        if (dep[fa[u][i]] >= dep[v])
+            u = fa[u][i];
+    }
+    if (u == v) return v;
+    //跳到LCA的下一层
+    for (int i = 19; i >= 0; i--) {
+        if (fa[u][i] != fa[v][i])
+            u = fa[u][i], v = fa[v][i];
+    }
+    return fa[u][0];
+}
+```
+
+### LCA（tarjan算法）
+
+```c++
+const int N = 1e6 + 10;
+int n, m, s, a, b;
+vector<int> e[N];
+vector<pair<int, int>> query[N];
+int fa[N], vis[N], ans[N];
+
+int find(int u) {
+    if (u == fa[u]) return u;
+    return fa[u] = find(fa[u]);
+}
+
+void tarjan(int u) {
+    vis[u] = true;  //入u时 标记u
+    for (auto v: e[u]) {
+        if (!vis[v]) {
+            tarjan(v);
+            fa[v] = u;  //回u时，v指向u
+        }
+    }
+    //离u时，枚举LCA
+    for (auto q: query[u]) {
+        int v = q.first, i = q.second;
+        if (vis[v]) {
+            ans[i] = find(v);
+        }
+    }
+}
+
+int main() {
+    cin >> n >> m >> s;
+    for (int i = 1; i < n; ++i) {
+        cin >> a >> b;
+        e[a].push_back(b);
+        e[b].push_back(a);
+    }
+    for (int i = 1; i <= m; ++i) {
+        cin >> a >> b;
+        query[a].push_back({b, i});
+        query[b].push_back({a, i});
+    }
+    for (int i = 1; i <= N; ++i) {
+        fa[i] = i;
+    }
+    tarjan(s);
+    for (int i = 1; i <= m; ++i) {
+        cout << ans[i] << endl;
+    }
+}
+```
+
+|            |         倍增算法          |            Tarjan算法            |
+| :--------: | :-----------------------: | :------------------------------: |
+|  数据结构  |     fa[u] [i] ,dep[u]     |   fa[u],vis[u],query[u],ans[u]   |
+|    算法    | 倍增法 深搜打表，跳跃查询 | 并查集，深搜，回时指父，离时搜根 |
+| 时间复杂度 |       O((n+m)logn)        |              O(n+m)              |
+
