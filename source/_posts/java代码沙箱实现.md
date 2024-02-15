@@ -1,7 +1,7 @@
 ---
 title: java实现代码沙箱
 abbrlink: 7
-categories: 学习笔记
+categories: java学习笔记
 tags: java项目
 updated: 2023-01-17
 data: 2023-01-17
@@ -21,7 +21,7 @@ data: 2023-01-17
 5. 文件清理
 
 ```java
-    public ExecuteCodeResponse executeCode(ExecuteCodeRequest executeCodeRequest) {
+public ExecuteCodeResponse executeCode(ExecuteCodeRequest executeCodeRequest) {
 //        System.setSecurityManager(new DefaultSecurityManager());
         List<String> inputList = executeCodeRequest.getInputList();
         String code = executeCodeRequest.getCode();
@@ -52,6 +52,8 @@ data: 2023-01-17
         return outputResponse;
     }
 ```
+
+<!-- more -->
 
 ### 1.把用户代码保存为文件
 

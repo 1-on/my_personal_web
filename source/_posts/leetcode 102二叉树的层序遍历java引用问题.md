@@ -1,7 +1,7 @@
 ---
 title: 二叉树的层序遍历-java引用问题解决
 abbrlink: 8
-categories: 学习笔记
+categories: java学习笔记
 tags: 算法
 updated: 2023-02-13
 data: 2023-02-13
@@ -23,6 +23,8 @@ data: 2023-02-13
 输入：root = [3,9,20,null,null,15,7]
 输出：[[3],[9,20],[15,7]]
 ```
+
+<!-- more -->
 
 **示例 2：**
 

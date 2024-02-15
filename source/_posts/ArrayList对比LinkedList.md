@@ -19,6 +19,8 @@ data: 2023-02-10
 
 那么LinkedList的删除和添加真的一定比ArrayList快吗？
 
+<!-- more -->
+
 ### 测试代码
 
 ```java

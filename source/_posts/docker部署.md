@@ -1,7 +1,7 @@
 ---
 title: docker部署
 abbrlink: 6
-categories: 学习笔记
+categories: docker学习笔记
 tags: docker
 updated: 2024-01-18
 data: 2024-01-18
@@ -29,6 +29,8 @@ COPY target ./target
 # Run the web service on container startup.
 CMD ["java","-jar","/app/target/user-center-0.0.1-SNAPSHOT.jar","--spring.profiles.active=prod"]
 ```
+
+<!-- more -->
 
 Dockerfile编写
 
