@@ -4,7 +4,7 @@ abbrlink: 6
 categories: docker学习笔记
 tags: docker
 updated: 2024-01-18
-data: 2024-01-18
+date: 2024-01-18
 
 ---
 
