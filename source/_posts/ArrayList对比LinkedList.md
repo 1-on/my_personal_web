@@ -3,8 +3,8 @@ title: ArrayList对比LinkedList
 abbrlink: 5
 categories: 学习笔记
 tags: java知识点
-updated: 2023-2-10
-date: 2023-02-10
+updated: 2024-2-10
+date: 2024-02-10
 ---
 
 
